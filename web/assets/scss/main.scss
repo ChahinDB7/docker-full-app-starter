@@ -1,0 +1,48 @@
+@import "devices";
+
+html, body {
+  color: $c-black;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: $d-l-laptop;
+  width: 100%;
+  padding-right: 80px;
+  padding-left: 80px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: 1275px) {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    @media (max-width: $d-m-laptop) {
+      padding-right: 32px;
+      padding-left: 32px;
+
+      @media (max-width: $d-m-ipad) {
+        padding-right: 24px;
+        padding-left: 24px;
+
+        @media (max-width: $d-s-ipad) {
+          padding-right: 16px;
+          padding-left: 16px;
+
+          @media (max-width: $d-l-mobile) {
+            padding-right: 16px;
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}

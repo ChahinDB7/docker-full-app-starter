@@ -1,0 +1,56 @@
+module.exports = {
+  env: {
+    node: true,
+  },
+  extends: [
+    "eslint:recommended",
+    "@nuxt/eslint-config",
+    "plugin:prettier/recommended",
+  ],
+  rules: {
+    indent: ["error", 2],
+    "no-lonely-if": "warn",
+    "no-empty": "off",
+    "no-unused-vars": 0,
+    "dot-notation": 1,
+    "vue/multi-word-component-names": 0,
+    "lodash/prefer-lodash-method": ["off"],
+    "import/no-unresolved": "off",
+    "lodash/prefer-noop": "off",
+    "no-param-reassign": "off",
+    "lodash/prefer-lodash-typecheck": "off",
+    "prefer-destructuring": "off",
+    "vue/no-deprecated-slot-attribute": "off",
+    "no-prototype-builtins": "off",
+    "vue/no-v-html": "off",
+    "import/no-cycle": "off",
+    "vue/require-explicit-emits": "off",
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        singleline: {
+          max: 20,
+        },
+        multiline: {
+          max: 20,
+        },
+      },
+    ],
+  },
+  globals: {
+    _forEach: true,
+    _round: true,
+    _isEmpty: true,
+    _find: true,
+    _orderBy: true,
+    _filter: true,
+    _flatMap: true,
+    _isNil: true,
+    _map: true,
+    strapiStore: true,
+    useStrapi: true,
+    $: true,
+    amp: true,
+    renderMathInElement: true,
+  },
+};

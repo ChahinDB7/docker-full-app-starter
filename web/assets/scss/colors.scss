@@ -1,0 +1,19 @@
+$c-white: #fff;
+$c-black: #303033;
+$c-primary: #58a58c;
+
+@mixin colors($property: color) {
+    &.c-white { #{$property}: $c-white !important; }
+    &.c-black { #{$property}: $c-black !important; }
+    &.c-primary { #{$property}: $c-primary !important; }
+}
+
+@mixin backgroundColors($property: background-color) {
+    &.b-white { #{$property}: $c-white !important; }
+    &.b-black { #{$property}: $c-black !important; }
+    &.b-primary { #{$property}: $c-primary !important; }
+}
+
+
+.c-white, .c-black, .c-primary { @include colors(); }
+.b-white, .b-black, .b-primary { @include backgroundColors(); }

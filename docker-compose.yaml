@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  web:
+    build: ./web
+    container_name: web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - sql_server
+
+  api:
+    build: ./api
+    container_name: api
+    restart: unless-stopped
+    ports:
+      - "5001:80"
+    depends_on:
+      - sql_server
+
+  sql_server: 
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    restart: unless-stopped
+    container_name: sql_server
+    environment: 
+      - ACCEPT_EULA=Y 
+      - SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    ports: 
+      - "1433:1433" 
+    volumes: 
+      - ./databases/sql:/var/opt/mssql/data
